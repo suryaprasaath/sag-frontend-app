@@ -1,2 +1,6 @@
-FROM nginx:1.19.2-alpine 
+FROM ubuntu
+RUN apt-get -y update && apt-get -y install nginx
 COPY ./ /usr/local/nginx/html
+COPY default /etc/nginx/sites-available/default
+EXPOSE 80/tcp
+CMD ["/usr/sbin/nginx", "-g", "daemon off;"]

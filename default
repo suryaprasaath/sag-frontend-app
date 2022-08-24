@@ -11,8 +11,8 @@ server {
 
   # node api reverse proxy
   location /login/ {
-    proxy_pass http://localhost:3000/login;
+    proxy_pass http://express-app.surya.svc.cluster.local:3000/login;
   }location /createUser/ {
-    proxy_pass http://localhost:3000/createUser;;
+    proxy_pass http://express-app.surya.svc.cluster.local:3000/createUser;;
   }
 }
